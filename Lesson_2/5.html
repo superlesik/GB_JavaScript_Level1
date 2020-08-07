@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Домашнее задание №5 ко 2 уроку</title>
+</head>
+
+<body>
+    <script>
+        /*Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно использовать оператор return.*/
+
+        function summary(x, y) {
+            return (x + y);
+        }
+        sum = summary(4, 6); //записываем значения переменных в нашу функцию
+        alert(sum);
+
+        function subtraction(x, y) {
+            return (x - y);
+        }
+        sub = subtraction(4, 6);
+        alert(sub);
+
+        function multiplication(x, y) {
+            return (x * y);
+        }
+        mult = multiplication(4, 6);
+        alert(mult);
+
+        function division(x, y) {
+            if (y != 0) {
+                return (x / y)
+            } else {
+                alert('На ноль делить нельзя!');
+            }
+        }
+        div = division(0, 2);
+        alert(div);
+    </script>
+
+</body>
+
+</html>

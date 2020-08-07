@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery on JS</title>
+    <style>
+        .container {
+            margin: 30px auto;
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            function changeImage(event) {
+                var bigImage = document.querySelector('.big'); // получаем в переменную div, где будут большие картинки
+                bigImage.innerHTML = '';  //очищаем div после каждого клика
+                var smallImage = event.target; // находим путь к картинке
+
+                var imageRename = smallImage.id.split("_"); //заменяем id="image_1" , отбрасываем image, чтобы использовать цифру 1
+                var src = "big/" + imageRename[1] + ".jpg"; // пишем новый путь  к картинке
+                var newImage = document.createElement('img'); // создаем новое изображение
+                newImage.src = src;
+                bigImage.appendChild(newImage); //помещаем в пустой div Для большой картинки изображение с новым адресом
+            }
+
+            //находим все элементы с классом image
+            var img = document.querySelectorAll('.image');
+            for (var i = 0; i < img.length; i++) {
+                img[i].onclick = changeImage;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        
+<!--сюда будет выводиться большое изображение-->
+        <div class="big"></div>
+
+<!--здесь будут маленькие изображения-->
+        <div class="small">
+            <img src="small/1.jpg" id="image_1" alt="Mickey Mouse" class="image">
+            <img src="small/2.jpg" id="image_2" alt="Minnie Mouse" class="image">
+            <img src="small/3.jpg" id="image_3" alt="Plutto" class="image">
+            <img src="small/4.jpg" id="image_4" alt="Donald Duck" class="image">
+        </div>
+    </div>
+</body>
+</html>

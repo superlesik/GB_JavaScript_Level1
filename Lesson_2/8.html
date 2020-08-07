@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Домашнее задание №8 ко 2 уроку</title>
+</head>
+
+<body>
+    <script>
+        /*С помощью рекурсии организовать функцию возведения числа в степень. Формат: function power(val, pow), где val– заданное число, pow– степень.*/
+
+        function power(val, pow) {
+            if (pow == 1) { //если значение степени равно 1, то сразу выводим заданное число, так любое число в степени 1 будет равно самому себе
+                return val;
+            } else if (pow < 0) {
+                return (1 / val) * (power(val, pow + 1));
+            } else if (pow == 0) {
+                return 1;
+            } else {
+                return val * power(val, pow - 1); // умножаем число на само себя столько раз, сколько задано в pow
+            }
+        }
+
+        var val = +prompt("Введите любое число: ");
+        var pow = +prompt("Введите значение степени, в которую необходимо возвести указанное число: ")
+        alert(power(val, pow));
+    </script>
+
+
+
+</body>
+
+</html>
